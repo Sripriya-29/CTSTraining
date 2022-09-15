@@ -3,6 +3,7 @@ import { BooksService } from '../bookservice.component';
 import { HomePageComponent } from '../home-page/home-page.component';
 import { Roles } from '../roles';
 import { UserModel } from '../users.component';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -29,7 +30,7 @@ export class SignUpComponent implements OnInit {
     lastName:'',
     active:true
   }
-  constructor(private Services:BooksService) { }
+  constructor(private Services:BooksService,private router:Router) { }
 
 
 
@@ -38,8 +39,10 @@ export class SignUpComponent implements OnInit {
 ngOnInit(): void {
   }
   onSubmit(){
+    console.log('hey');
     console.log(this.user);
     this.Services.postUser(this.user).subscribe(response=>this.users);
+    this.router.navigate(["Login"]);
   }
 
 

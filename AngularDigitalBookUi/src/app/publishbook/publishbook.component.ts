@@ -59,7 +59,12 @@ export class PublishbookComponent implements OnInit {
 
  ngOnInit(): void {
    this. getAllUsers();
+   this.bookServiceComponent.getAllBooks()
+      .subscribe(
+        response => { this.books = response;}
+      );
   }
+  
 getAllBooks() {
     this.bookServiceComponent.getAllBooks()
     .subscribe(
@@ -72,8 +77,9 @@ getAllUsers()
    .subscribe(
     response => { this.users = response}
   );
-}
 
+
+}
 
 
  onSubmit()
@@ -105,11 +111,6 @@ getAllUsers()
     {
       console.log(this.selectedObject)
     }
-    
-    
-
-
-
-
+ 
         }
     

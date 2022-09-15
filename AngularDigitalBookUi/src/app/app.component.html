@@ -1,32 +1,57 @@
 <div class="toolbar" role="banner">
-  <img
-    width="40"
-    height="40"
-    alt="Angular Logo"
-    src="https://archinect.imgix.net/uploads/oj/ojnwgyv9um4gzgdg.JPG?auto=compress%2Cformat" />
-  <nav>
-    <tr>
-      <span>DigitalBook</span>
-          &nbsp; &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp;
-            <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">Home</a>
-            &nbsp; &nbsp; &nbsp;
-        <th>
-    
-            <div>
-  <a routerLink="/SignUp" routerLinkActive="active" ariaCurrentWhenActive="page">Signup</a>   
-  &nbsp; &nbsp; &nbsp;
-</div>
-  <th>
-      <div>
-<a routerLink="/Login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a>   &nbsp;&nbsp;&nbsp;
-</div>
-  </th>
-  <th>
-    <div>
-<a routerLink="/Publish" routerLinkActive="active" ariaCurrentWhenActive="page">Publish</a>   &nbsp;&nbsp;&nbsp;
-</div>
-</th>
+  <nav class="navbar navbar-dark bg-primary">
 
-  </tr>
-  </nav>
-<router-outlet></router-outlet>
+      <h4>Digital Book</h4>
+   
+
+   <div class="topnav">
+      <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">SearchBooks</a>
+      &nbsp; &nbsp; &nbsp;
+     <a routerLink="/Register" routerLinkActive="active" ariaCurrentWhenActive="page">Registration</a>
+      &nbsp; &nbsp; &nbsp;
+
+
+
+     <a routerLink="/Login" routerLinkActive="active" [hidden]="Islogoutshow" ariaCurrentWhenActive="page">Login</a>
+      &nbsp;&nbsp;&nbsp;
+
+
+
+     <a routerLink="/Publish" routerLinkActive="active" [hidden]="!IsAuthormoduleshow"
+        ariaCurrentWhenActive="page">AddBook</a> &nbsp;&nbsp;&nbsp;
+
+        <a routerLink="/AvailableBooks" routerLinkActive="active" [hidden]="!IsAuthormoduleshow" ariaCurrentWhenActive="page">Available Book</a>   &nbsp;&nbsp;&nbsp;
+
+     <a routerLink="/Reader" routerLinkActive="active" [hidden]="!IsReadermoduleshow"
+        ariaCurrentWhenActive="page">Reader</a> &nbsp;&nbsp;&nbsp;
+
+
+
+     <a class="btn btn-primary float-right m-2" [hidden]="!Islogoutshow" (click)="signOutClick()">LogOut</a>
+
+
+
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>{{userName}}</label>
+      <br>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <label>{{ emailId }}</label>
+
+
+
+
+    </div>
+
+
+
+ </nav>
+
+
+
+ <router-outlet></router-outlet>
+
+
+
+</div>

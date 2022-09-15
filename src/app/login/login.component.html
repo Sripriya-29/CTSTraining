@@ -1,0 +1,27 @@
+<br><br><br><br><br><br><br> <br><br>
+<div class="container" style="align-items: center;" >
+    <div class="container">
+       <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
+        <br>
+        <br>
+        <div class="form-group" style="text-align: center;">
+       <th>   <label for="">UserName </label>&nbsp;
+          <input type="text" name="UserName" [(ngModel)]="user.userName"></th>
+           <br><br>
+        </div>
+        <div>
+        <th>    <label for="">Password</label>&nbsp;&nbsp;
+            <input type="password" name="password" [(ngModel)]="user.password"></th>
+          </div>
+          <br>
+          <br>
+        
+        <div class="form-group" >
+        <th>     <button (onclick)="onSubmit()">Login </button></th>
+        </div>
+
+
+
+   </form>
+</div>
+</div>

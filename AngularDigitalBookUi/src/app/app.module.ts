@@ -8,6 +8,15 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { LoginComponent } from './login/login.component';
 import { PublishbookComponent } from './publishbook/publishbook.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { AvailablebooksComponent } from './availablebooks/availablebooks.component';
+import { ReaderComponent } from './reader/reader.component';
+import { ViewcontentComponent } from './viewcontent/viewcontent.component';
+import { PurchaseComponent } from './purchase/purchase.component';
+
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdateComponent } from './update/update.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +24,22 @@ import { FormsModule } from '@angular/forms';
     HomePageComponent,
     SignUpComponent,
     LoginComponent,
-    PublishbookComponent
+    PublishbookComponent,
+    AvailablebooksComponent,
+    ReaderComponent,
+    ViewcontentComponent,
+    PurchaseComponent,
+   
+    UpdateComponent
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    NgbModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
