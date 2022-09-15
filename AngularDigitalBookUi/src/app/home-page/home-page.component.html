@@ -1,10 +1,10 @@
-<br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br>
     <div class=" books-container">
       <div class=" books-form">
         <form #form="ngForm"  (ngSubmit)="onSubmit()" >
          
           <div class="form-group">
-           <th> <label for="">Book Name</label>
+           <th> <label for="">Book Name</label>&nbsp;&nbsp;
           &nbsp;
             <input type="text" name="BookName" [(ngModel)]='book.bookName' />
           </th>
@@ -18,7 +18,7 @@
           <div class="form-group">
             <div>
               <th>
-              <label for="">Publisher</label>  &nbsp;
+              <label for="">Publisher</label>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
               <input type="text" name="Publisher" [(ngModel)]='book.publisher' /></th>
             </div>
             <br>
@@ -34,6 +34,7 @@
             <th>
               <button (onclick)="onSubmit()">Search</button></th>
             </div>
+            <br>
             <!-- <div class="books-grid">
               <div class="book-row" *ngFor="let book of books">
                 <div class="book-row-details"> -->
@@ -43,17 +44,24 @@
              <div class="books-grid">
               <div class="book-row">
                   <div class="book-row-details">
-                      <table class="table table-bordered">
+                      <table class="myTable myTable-zebra myTable-horizontal">
                           <thead>
-                              <th>BookName</th> &nbsp;
+                            <th>BookId</th> 
+                              <th>BookName</th> 
                               <th>Price</th>
-                          </thead>
-                          <tbody *ngFor="let book of books">
-                              <tr>
-                                  <td>{{ book.bookName }}</td>&nbsp;
-                                  <td>{{ book.price }}</td>
-                            
-                              <button class="Button" type="submit">Buy<i class="ffa fa-cart-plus"></i></button>  </tr>
+                              <th>Publisher</th>
+                              <th>PublishedDate</th>
+                      </thead>
+                      <tbody *ngFor="let book of books" >
+                          <tr>
+                            <td>{{book.bookId}}</td>
+                              <td>{{ book.bookName }}</td>
+                              <td>{{ book.price }}</td>
+                              <td>{{ book.publisher }}</td>
+                                <td>{{ book.publishedDate }}</td>
+                                <td>
+                                <a [routerLink]="['/purchase', book.bookId]"> buy </a></td>
+                              </tr>
                           </tbody>
                       
                       </table>

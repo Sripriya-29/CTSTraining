@@ -1,23 +1,23 @@
-<br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-<div class="container" >
+<br><br><br>
+<div class="container" style="align-items: center;" >
     <div class="container">
        <form #form="ngForm"(ngSubmit)="onSubmit()" ><!-- -->
         <br>
         <br>
-        <div class="form-group">
-       <th>   <label for="">UserName </label>&nbsp;
-          <input type="text" name="UserName" [(ngModel)]="uservalidation.username"></th>
+        <div class="form-group" style="text-align: center;">
+        <label for="">UserName </label>&nbsp;
+          <input type="text" name="UserName" [(ngModel)]="user.userName">
            <br><br>
         </div>
-        <div>
-        <th>    <label for="">Password</label>&nbsp;&nbsp;
-            <input type="password" name="password" [(ngModel)]="uservalidation.password"></th>
+        <div class="form-group" style="text-align: center;">
+          <label for="">Password</label>&nbsp;&nbsp;&nbsp;
+            <input type="password" name="password" [(ngModel)]="user.password">
           </div>
           <br>
           <br>
-          <br>
-        <div class="form-group">
-        <th>     <button (onclick)="onSubmit()">Login </button></th>
+        
+        <div class="form-group" style="text-align: center;" >
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <button (onclick)="onSubmit()">Login </button>
         </div>
 
 
